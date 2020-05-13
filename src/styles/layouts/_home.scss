@@ -1,0 +1,56 @@
+body > #root > div > .cComponent {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: '100%';
+    height: '100vh';
+}
+
+
+#myName{
+    font-size: 150px;
+    font-weight: bold;
+    margin-top: 36%;
+    color: white;
+    margin-left: 1%;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.thought{
+    color:black;
+    font-size: 15px;
+    background-color: white;
+    opacity: 0.6;
+    position: fixed;
+    bottom: 40px;
+    height: 20px;
+    width: 100%;
+    padding-left: 1%;
+}
+
+
+.content {
+  display: flex;
+  width: 100%;
+}
+
+.content img {
+  margin-right: 10px;
+  display: block;
+  width:50%;
+  height: 100vh;
+}
+
+.content .content-right {
+    width: 50%;
+    height: 100vh;
+}
+
+.title-tag{
+    font-size: 70px;
+}
+
+.description-tag{
+    padding-top: 25%;
+    padding-left: 10%;
+    padding-right: 5%;
+}
