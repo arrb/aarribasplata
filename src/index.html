@@ -2,10 +2,22 @@
 <html>
 <head>
     <base href="/">
-    <title>React With Webpack</title>
+    <title>Ana Arribasplata</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./../images/favicon1.ico" rel="icon" sizes="16x16" type="img/.ico">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBizrFcjeueuIq774fmA-vaertz5T97ZgQ"
+    async defer></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+	</script>
+	<script type="text/javascript">
+	   (function(){
+	      // emailjs.init(process.env.REACT_APP_EMAILJS_USERID);
+	      emailjs.init("%REACT_APP_EMAILJS_USERID%");
+	   })();
+	</script>
+
 </head>
 <body>
 <div id="root"></div>

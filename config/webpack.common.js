@@ -22,12 +22,13 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['react', 'es2015']
+                        presets: ['react', 'es2015'],
+                        plugins: ["emotion"]
                     }
                 }
             },
             {
-                test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.(woff|woff2|ttf)(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'url-loader',
                 options: {
                     limit: 50000,
