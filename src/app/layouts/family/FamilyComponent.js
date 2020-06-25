@@ -7,7 +7,8 @@ const slideImages = [
   './../../../../images/slideshow/felixConLentes.jpg',
   './../../../../images/slideshow/felixYRocky.png',
   './../../../../images/slideshow/rockyPelucon.jpg',
-  './../../../../images/slideshow/navidad.png'
+  './../../../../images/slideshow/navidad.png',
+  './../../assets/images/logo.png'
 ];
 
 const properties = {
