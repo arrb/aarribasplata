@@ -1,2 +1,2 @@
-# newWebsite
-My designer friend helped me improve my personal website
+# Ana Arribasplata
+Get to know me! :)

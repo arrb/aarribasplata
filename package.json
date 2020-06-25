@@ -5,9 +5,9 @@
   "homepage": "http://arrb.github.io/aarribasplata",
   "scripts": {
     "start": "webpack-dev-server --progress --port 5200",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "build": "rimraf dist && webpack --config webpack-dev-server --progress --profile --bail",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "email": "anac.arribasplata@gmail.com",
   "devDependencies": {
@@ -36,7 +36,7 @@
     "react-css-modules": "^4.2.0",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
-    "rimraf": "^2.6.1",
+    "rimraf": "^2.7.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.13.1",
     "tabletop": "^1.5.1",

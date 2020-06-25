@@ -6,7 +6,6 @@ const helpers = require('./helpers');
 
 module.exports = {
     entry: {
-        'vendor': './src/vendor.js',
         'app': './src/main.js'
     },
 
@@ -89,7 +88,7 @@ module.exports = {
         new webpack
             .optimize
             .CommonsChunkPlugin({
-                name: ['app', 'vendor']
+                name: 'app'
             }),
 
         new ExtractTextPlugin({
