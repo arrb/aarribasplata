@@ -2,13 +2,16 @@ import React from "react";
 import {Image} from "react";
 
 import { Slide } from 'react-slideshow-image';
+var felixConLentes = require('./../../../../images/felixConLentes.jpg');
+var felixYRocky = require('./../../../../images/felixYRocky.png');
+var rockyPelucon = require('./../../../../images/rockyPelucon.jpg');
+var navidad = require('./../../../../images/navidad.png');
 
 const slideImages = [
-  './../../../../images/slideshow/felixConLentes.jpg',
-  './../../../../images/slideshow/felixYRocky.png',
-  './../../../../images/slideshow/rockyPelucon.jpg',
-  './../../../../images/slideshow/navidad.png',
-  './../../assets/images/logo.png'
+  felixConLentes,
+  felixYRocky,
+  rockyPelucon,
+  navidad
 ];
 
 const properties = {
