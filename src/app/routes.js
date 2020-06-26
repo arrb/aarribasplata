@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, HashRouter } from "react-router-dom";
 
 import HomeComponent from "./layouts/home/HomeComponent";
 import AboutComponent from "./layouts/about/AboutComponent";
@@ -25,21 +25,22 @@ class RouterComponent extends React.Component{
   }
 
   render(){
-    console.log("routeesTEST: " , this.state.isOpen)
+    console.log("routHashRoutereesTEST: " , this.state.isOpen)
+    console.log("proces: " , process.env)
     return(
-      <Router>
-        <Switch>
-          <div>
-            <Links changeState={this.changeState.bind(this)}/>
-             <Route exact path="/"   render={(props) => <HomeComponent isOpen={this.state.isOpen} /> } />
-             <Route path="/about" component={AboutComponent} />
-             <Route path="/travels" component={TravelsComponent} /> 
-             <Route path="/family" render={(props) => <FamilyComponent isOpen={this.state.isOpen} /> }  /> 
-             <Route path="/hireMe" render={(props) => <HireMe isOpen={this.state.isOpen} /> }  /> 
-            <Route component={() => (<div>404 Not found 1</div>)} />
-            </div>
-          </Switch>
-        </Router>
+      <HashRouter basename={process.env.PUBLIC_URL}>
+        <Route render = {({ location }) => (
+         <Layout location = { location }>
+             <Switch location = { location }>
+               <Route exact path="/"   render={(props) => <HomeComponent isOpen={this.state.isOpen} /> } />
+               <Route path="/about" component={AboutComponent} />
+               <Route path="/travels" component={TravelsComponent} /> 
+               <Route path="/family" render={(props) => <FamilyComponent isOpen={this.state.isOpen} /> }  /> 
+               <Route path="/hireMe" render={(props) => <HireMe isOpen={this.state.isOpen} /> }  /> 
+              </Switch>
+           </Layout>
+       )} />
+      </HashRouter>
       )
    }
 
