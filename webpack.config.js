@@ -3,6 +3,7 @@ var webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const { join, resolve } = require('path')
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const dotenv = require('dotenv')
 
 
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -16,6 +17,9 @@ var isDevelopment = true
 var MiniCssExtractPlugin =  new MiniCssExtractPlugin({
       filename: isDevelopment ? path.join(__dirname, '[name].css') : path.join(__dirname, '[name].[hash].css'),
       chunkFilename: isDevelopment ? path.join(__dirname, '[id].css') : path.join(__dirname, '[id].[hash].css')
+    });
+var DefinePlugin = new webpack.DefinePlugin({
+       'process.env': JSON.stringify(dotenv.config().parsed) // it will automatically pick up key values from .env file
     })
 // template: resolve(__dirname, 'src/public', 'index.html'),
 //         filename: './index.html'
@@ -116,7 +120,7 @@ module.exports = {
         publicPath: "https://arrb.github.io/"
   },
   // cuando es local publicPath:" __dirname + "/build/"" funciona. Cuando es onlin `/` funciona
-   plugins: [HTMLWebpackPluginConfig,MiniCssExtractPlugin],
+   plugins: [HTMLWebpackPluginConfig,MiniCssExtractPlugin, DefinePlugin],
    devServer: {
     contentBase: path.join(__dirname, 'src/dist'),
     publicPath: 'http://localhost:3000/',
