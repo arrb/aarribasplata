@@ -26,7 +26,7 @@ module.exports = {
   // context: __dirname + "/app",
   //   entry: "./entry",
   //   output: {
-  //       path: __dirname + "/dist",
+  //       path: __dirname + "/build",
   //       filename: "bundle.js"
   //   }
   context: __dirname,
@@ -87,7 +87,7 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-                path: __dirname + "/dist",
+                path: __dirname + "/build",
                  name: '[name].[ext]',
                 publicPath:"/"
             }
@@ -107,18 +107,18 @@ module.exports = {
     ]
   },
   // output: {
-  //   path: path.join(__dirname, 'src/dist'),
+  //   path: path.join(__dirname, 'src/build'),
   //   filename: '[name].bundle.min.js',
   // },
   output:{
-        path: __dirname + "/dist",
+        path: __dirname + "/build",
         filename: "bundle.js",
         publicPath:"/"
   },
-  // cuando es local publicPath:" __dirname + "/dist/"" funciona. Cuando es onlin `/` funciona
+  // cuando es local publicPath:" __dirname + "/build/"" funciona. Cuando es onlin `/` funciona
    plugins: [HTMLWebpackPluginConfig,MiniCssExtractPlugin],
    devServer: {
-    contentBase: path.join(__dirname, 'src/dist'),
+    contentBase: path.join(__dirname, 'src/build'),
     publicPath: 'http://localhost:3000/',
     port: 3000,
     historyApiFallback: true
