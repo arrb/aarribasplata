@@ -9,9 +9,9 @@
     "node": ">=12.9.1"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm run start",
     "deploy": "gh-pages -d dist",
-    "start": "webpack --mode=development --watch",
+    "start": "webpack --mode=development",
     "dev": "webpack-dev-server --progress --port 3000 --hot --inline",
     "build": "webpack --mode=production"
   },
