@@ -27,7 +27,7 @@ class RouterComponent extends React.Component{
   render(){
     console.log("routes: " , this.state.isOpen)
     return(
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div>
           <Links changeState={this.changeState.bind(this)}/>
           <Route exact path="/"   render={(props) => <HomeComponent isOpen={this.state.isOpen} /> } />
