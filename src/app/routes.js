@@ -31,7 +31,7 @@ class RouterComponent extends React.Component{
       <HashRouter basename={process.env.PUBLIC_URL}>
         <Route render = {({ location }) => (
            <Switch location = { location }>
-             <Route exact path="/"   render={(props) => <HomeComponent isOpen={this.state.isOpen} /> } />
+             <Route exact path="/#/"   render={(props) => <HomeComponent isOpen={this.state.isOpen} /> } />
              <Route path="/about" component={AboutComponent} />
              <Route path="/travels" component={TravelsComponent} /> 
              <Route path="/family" render={(props) => <FamilyComponent isOpen={this.state.isOpen} /> }  /> 
