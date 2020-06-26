@@ -29,7 +29,7 @@ class HomeComponent extends React.Component {
         console.log("-k- Render: ", this.state)
     return (
         <div id="outer-container">
-            <Menu onStateChange={this.test.bind(this)} onStateChange={ this.isMenuOpen.bind(this) } isOpen={ this.state.isOpen } width={ '50%' } id="scaleRotate" outerContainerId={'outer-container'} >
+            <Menu onStateChange={this.test.bind(this)} onStateChange={ this.isMenuOpen.bind(this) } isOpen={ this.props.isOpen } width={ '50%' } id="scaleRotate" outerContainerId={'outer-container'} >
                     <li className="li-menu-item"><a className="menu-item" href="/#/about"> About Me </a></li>
                     <li className="li-menu-item"><a className="menu-item" href="/#/hireMe"> Hire Me  </a></li>
                     <li className="li-menu-item"><a className="menu-item" href="/#/travels"> Travels </a></li>
