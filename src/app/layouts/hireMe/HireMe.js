@@ -19,10 +19,7 @@ import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      // light: will be calculated from palette.primary.main,
       main: '#50E3C2',
-      // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
     }
   },
   input: {
@@ -102,7 +99,6 @@ const useStyles = makeStyles({
     const str =
       "- Tell us about this project\n What skills are you looking for?";
 
-    console.log("state " , this.state)
     return(
       <div className="contact-wrapper" style={this.props.isOpen ?  {'filter': 'grayscale(100%)'} : null}>
         

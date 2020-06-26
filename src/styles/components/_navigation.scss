@@ -13,18 +13,25 @@
   color: #50E3C2;
 }
 
-.li-menu-item:focus {
-  outline: none;
+li.li-menu-item {
+  list-style-type: none;
 }
 
-.li-menu-item:active {
+li.li-menu-item:focus {
+  outline: none;
+  list-style-type: none;
+}
+
+li.li-menu-item:active {
   border: 5px solid #50E3C2;
   outline: none;
+  list-style-type: none;
 }
 
-.li-menu-item:visited {
+li.li-menu-item:visited {
   border: 5px solid transparent;
   outline: none;
+  list-style-type: none;
 }
 
 .nav-down{

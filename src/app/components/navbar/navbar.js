@@ -1,39 +1,36 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-// React Component
 import { push as Menu } from 'react-burger-menu';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faHome, faFemale } from '@fortawesome/free-solid-svg-icons'
 
-//@fortawesome/free-brands-svg-icons
 
 class HomeComponent extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor (props) {
+    super(props)
         this.state = {
-          isOpen: false
-          }
-      }
-    isMenuOpen() {
-        console.log("is open:s " , this.props, "stat", this.state, "props" ,this.props)
-        this.props.changeState();
-        this.setState({isOpen: !this.state.isOpen})
+            menuOpen: false
+        }
     }
 
-    test(){
-        console.log("TESTTTTT")
+    closeMenu () {
+        this.setState({menuOpen: false})
+    }
+
+    isMenuOpen(state) {
+        this.props.changeState();
+        this.setState({menuOpen: state.isOpen})  
     }
 
     render() {
-        console.log("-k- Render: ", this.state)
-    return (
-        <div id="outer-container">
-            <Menu onStateChange={this.test.bind(this)} onStateChange={ this.isMenuOpen.bind(this) } isOpen={ this.props.isOpen } width={ '50%' } id="scaleRotate" outerContainerId={'outer-container'} >
-                    <li className="li-menu-item"><a className="menu-item" href="/#/about"> About Me </a></li>
-                    <li className="li-menu-item"><a className="menu-item" href="/#/hireMe"> Hire Me  </a></li>
-                    <li className="li-menu-item"><a className="menu-item" href="/#/travels"> Travels </a></li>
-                    <li className="li-menu-item"><a className="menu-item" href="/#/family"> My Family </a></li>
+        return (
+            <div id="outer-container">
+                <Menu isOpen={this.state.menuOpen} onStateChange={(state) => this.isMenuOpen(state)}  width={ '50%' } id="scaleRotate" outerContainerId={'outer-container'} >
+                    <li className="li-menu-item"><a className="menu-item" onClick={() => this.closeMenu()} href="/#/about"> About Me </a></li>
+                    <li className="li-menu-item"><a className="menu-item" onClick={() => this.closeMenu()} href="/#/hireMe"> Hire Me  </a></li>
+                    <li className="li-menu-item"><a className="menu-item" onClick={() => this.closeMenu()} href="/#/travels"> Travels </a></li>
+                    <li className="li-menu-item"><a className="menu-item" onClick={() => this.closeMenu()} href="/#/family"> My Family </a></li>
                     <div className="nav-down"> 
                         <li className="nav-down-li"><a className="small-icons" href="/#/hireMe"> Contact Me </a></li>
                         <li className="nav-down-li"><a className="small-icons" href="./../../../../arribasplata_ana_resume.pdf" target="_blank"> Resume </a></li>
@@ -41,12 +38,11 @@ class HomeComponent extends React.Component {
                         <li className="nav-down-li"><a className="small-icons" href="https://www.linkedin.com/in/anaarribasplata" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a></li>
                         <li className="nav-down-li"><a className="small-icons" href="https://github.com/arrb" target="_blank"><FontAwesomeIcon icon={faGithub} /></a></li>
                     </div>
-            </Menu>
-        </div>
+                </Menu>
+            </div>
         )
     }
 }
-
 
 
 export default HomeComponent;
