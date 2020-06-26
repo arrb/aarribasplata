@@ -87,9 +87,9 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-                path: __dirname + "/dist",
+                path: __dirname + "/",
                  name: '[name].[ext]',
-                publicPath: "https://arrb.github.io/dist/"
+                publicPath: "https://arrb.github.io/"
             }
           }
         ]},
@@ -111,9 +111,9 @@ module.exports = {
   //   filename: '[name].bundle.min.js',
   // },
   output:{
-        path: __dirname + "/dist",
+        path: __dirname + "/",
         filename: "bundle.js",
-        publicPath: "https://arrb.github.io/dist/"
+        publicPath: "https://arrb.github.io/"
   },
   // cuando es local publicPath:" __dirname + "/build/"" funciona. Cuando es onlin `/` funciona
    plugins: [HTMLWebpackPluginConfig,MiniCssExtractPlugin],
