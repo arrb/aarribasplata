@@ -25,18 +25,20 @@ class RouterComponent extends React.Component{
   }
 
   render(){
-    console.log("routHashRoutereesTEST: " , this.state.isOpen)
-    console.log("proces: " , process.env)
+    console.log("test: " , this.state.isOpen)
     return(
       <HashRouter basename={process.env.PUBLIC_URL}>
         <Route render = {({ location }) => (
-           <Switch location = { location }>
-             <Route exact path="/#/"   render={(props) => <HomeComponent isOpen={this.state.isOpen} /> } />
-             <Route path="/about" component={AboutComponent} />
-             <Route path="/travels" component={TravelsComponent} /> 
-             <Route path="/family" render={(props) => <FamilyComponent isOpen={this.state.isOpen} /> }  /> 
-             <Route path="/hireMe" render={(props) => <HireMe isOpen={this.state.isOpen} /> }  /> 
-            </Switch>
+          <div>
+            <Links changeState={this.changeState.bind(this)}/>
+             <Switch location = { location }>
+               <Route exact path="/"   render={(props) => <HomeComponent isOpen={this.state.isOpen} /> } />
+               <Route path="/about" component={AboutComponent} />
+               <Route path="/travels" component={TravelsComponent} /> 
+               <Route path="/family" render={(props) => <FamilyComponent isOpen={this.state.isOpen} /> }  /> 
+               <Route path="/hireMe" render={(props) => <HireMe isOpen={this.state.isOpen} /> }  /> 
+              </Switch>
+            </div>
        )} />
       </HashRouter>
       )
