@@ -87,9 +87,9 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-                path: __dirname + "/build",
+                path: __dirname + "/dist",
                  name: '[name].[ext]',
-                publicPath:"/"
+                publicPath: __dirname + "/dist/"
             }
           }
         ]},
@@ -111,14 +111,14 @@ module.exports = {
   //   filename: '[name].bundle.min.js',
   // },
   output:{
-        path: __dirname + "/build",
+        path: __dirname + "/dist",
         filename: "bundle.js",
-        publicPath:"/"
+        publicPath:__dirname + "/dist/"
   },
   // cuando es local publicPath:" __dirname + "/build/"" funciona. Cuando es onlin `/` funciona
    plugins: [HTMLWebpackPluginConfig,MiniCssExtractPlugin],
    devServer: {
-    contentBase: path.join(__dirname, 'src/build'),
+    contentBase: path.join(__dirname, 'src/dist'),
     publicPath: 'http://localhost:3000/',
     port: 3000,
     historyApiFallback: true
