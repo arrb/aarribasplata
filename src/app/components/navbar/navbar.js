@@ -16,17 +16,16 @@ class HomeComponent extends React.Component {
           }
       }
     isMenuOpen() {
-        const {isOpen} = this.state
-        console.log("is open:s " , this.props, "stat", this.state, "isOpen ", isOpen, "props" ,this.props)
+        console.log("is open:s " , this.props, "stat", this.state, "props" ,this.props)
         this.props.changeState();
-        this.setState({isOpen: this.props.isOpen ? !this.props.isOpen : false})
+        this.setState({isOpen: !this.state.isOpen})
     }
 
     render() {
         console.log("Render: ", this.state)
     return (
         <div id="outer-container">
-            <Menu onStateChange={ this.isMenuOpen.bind(this) } onClick={()=>console.log("On click!")} isOpen={ false } width={ '50%' } id="scaleRotate" outerContainerId={'outer-container'} >
+            <Menu onStateChange={ this.isMenuOpen.bind(this) } onClick={()=>console.log("On click!")} isOpen={ this.state.isOpen } width={ '50%' } id="scaleRotate" outerContainerId={'outer-container'} >
                 <li className="li-menu-item"><a className="menu-item" href="/#/about"> About Me </a></li>
                 <li className="li-menu-item"><a className="menu-item" href="/#/hireMe"> Hire Me  </a></li>
                 <li className="li-menu-item"><a className="menu-item" href="/#/travels"> Travels </a></li>
