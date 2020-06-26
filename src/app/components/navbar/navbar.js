@@ -11,7 +11,7 @@ import { faHome, faFemale } from '@fortawesome/free-solid-svg-icons'
 class HomeComponent extends React.Component {
 
     isMenuOpen() {
-        console.log("heiuhwuihruiw " , this.props)
+        console.log("heiueeuhiuhihwuihruiw " , this.props)
         this.props.changeState();
     }
 
@@ -19,7 +19,8 @@ class HomeComponent extends React.Component {
     return (
         <div id="outer-container">
             <Menu onStateChange={ this.isMenuOpen.bind(this) } width={ '50%' } id="scaleRotate" pageWrapId={'page-wrap'} outerContainerId={'outer-container'} >
-                <li className="li-menu-item"><a className="menu-item" href="/#/about"> About Me </a></li>
+                <main id="page-wrap">
+                <li className="li-menu-item"><a className="mernu-item" href="/#/about"> About Me </a></li>
                 <li className="li-menu-item"><a className="menu-item" href="/#/hireMe"> Hire Me  </a></li>
                 <li className="li-menu-item"><a className="menu-item" href="/#/travels"> Travels </a></li>
                 <li className="li-menu-item"><a className="menu-item" href="/#/family"> My Family </a></li>
@@ -30,6 +31,7 @@ class HomeComponent extends React.Component {
                     <li className="nav-down-li"><a className="small-icons" href="https://www.linkedin.com/in/anaarribasplata" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a></li>
                     <li className="nav-down-li"><a className="small-icons" href="https://github.com/arrb" target="_blank"><FontAwesomeIcon icon={faGithub} /></a></li>
                 </div>
+                </main>
             </Menu>
         </div>
         )
