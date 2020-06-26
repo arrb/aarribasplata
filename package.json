@@ -2,15 +2,14 @@
   "name": "Ana-Arribasplata-Resume",
   "version": "1.0.0",
   "main": "src/index.js",
-  "unpkg": "dist/index.js",
-  "homepage": "http://arrb.github.io/dist/",
+  "homepage": "http://arrb.github.io/",
   "engineStrict": true,
   "engines": {
     "node": ">=12.9.1"
   },
   "scripts": {
     "predeploy": "npm run start",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d /",
     "start": "webpack --mode=development",
     "dev": "webpack-dev-server --progress --port 3000 --hot --inline",
     "build": "webpack --mode=production"
