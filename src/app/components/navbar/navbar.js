@@ -26,20 +26,20 @@ class HomeComponent extends React.Component {
     }
 
     render() {
-        console.log("Re3nder2: ", this.state)
+        console.log("-- Render: ", this.state)
     return (
         <div id="outer-container">
-            <Menu onStateChange={ this.isMenuOpen.bind(this) } onClick={()=>console.log("On click!")} isOpen={ this.state.isOpen } width={ '50%' } id="scaleRotate" outerContainerId={'outer-container'} >
-                    <li className="li-menu-item"><a className="menu-item" onClick={ this.closeNav.bind(this) } href="/#/about"> About Me </a></li>
-                    <li className="li-menu-item"><a className="menu-item" onClick={ this.closeNav.bind(this) } href="/#/hireMe"> Hire Me  </a></li>
-                    <li className="li-menu-item"><a className="menu-item" onClick={ this.closeNav.bind(this) } href="/#/travels"> Travels </a></li>
-                    <li className="li-menu-item"><a className="menu-item" onClick={ this.closeNav.bind(this) } href="/#/family"> My Family </a></li>
+            <Menu onStateChange={ this.isMenuOpen.bind(this) } isOpen={ this.state.isOpen } width={ '50%' } id="scaleRotate" outerContainerId={'outer-container'} >
+                    <li className="li-menu-item"><a className="menu-item" onClick={ ()=>{console.log("Click") , this.setState({isOpen: false}) }} href="/#/about"> About Me </a></li>
+                    <li className="li-menu-item"><a className="menu-item" onClick={ ()=>{console.log("Click") , this.setState({isOpen: false}) }} href="/#/hireMe"> Hire Me  </a></li>
+                    <li className="li-menu-item"><a className="menu-item" onClick={ ()=>{console.log("Click") , this.setState({isOpen: false}) }} href="/#/travels"> Travels </a></li>
+                    <li className="li-menu-item"><a className="menu-item" onClick={ ()=>{console.log("Click") , this.setState({isOpen: false}) }} href="/#/family"> My Family </a></li>
                     <div className="nav-down"> 
-                        <li className="nav-down-li"><a className="small-icons" onClick={ this.closeNav.bind(this) } href="/#/hireMe"> Contact Me </a></li>
-                        <li className="nav-down-li"><a className="small-icons" onClick={ this.closeNav.bind(this) } href="./../../../../arribasplata_ana_resume.pdf" target="_blank"> Resume </a></li>
-                        <li className="nav-down-li"><a className="small-icons" onClick={ this.closeNav.bind(this) } href="/"><FontAwesomeIcon icon={faHome} /></a></li>
-                        <li className="nav-down-li"><a className="small-icons" onClick={ this.closeNav.bind(this) } href="https://www.linkedin.com/in/anaarribasplata" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a></li>
-                        <li className="nav-down-li"><a className="small-icons" onClick={ this.closeNav.bind(this) } href="https://github.com/arrb" target="_blank"><FontAwesomeIcon icon={faGithub} /></a></li>
+                        <li className="nav-down-li"><a className="small-icons" onClick={ ()=>{console.log("Click") , this.setState({isOpen: false}) }} href="/#/hireMe"> Contact Me </a></li>
+                        <li className="nav-down-li"><a className="small-icons" onClick={ ()=>{console.log("Click") , this.setState({isOpen: false}) }} href="./../../../../arribasplata_ana_resume.pdf" target="_blank"> Resume </a></li>
+                        <li className="nav-down-li"><a className="small-icons" onClick={ ()=>{console.log("Click") , this.setState({isOpen: false}) }} href="/"><FontAwesomeIcon icon={faHome} /></a></li>
+                        <li className="nav-down-li"><a className="small-icons" onClick={ ()=>{console.log("Click") , this.setState({isOpen: false}) }} href="https://www.linkedin.com/in/anaarribasplata" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a></li>
+                        <li className="nav-down-li"><a className="small-icons" onClick={ ()=>{console.log("Click") , this.setState({isOpen: false}) }} href="https://github.com/arrb" target="_blank"><FontAwesomeIcon icon={faGithub} /></a></li>
                     </div>
             </Menu>
         </div>
