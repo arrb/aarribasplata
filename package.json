@@ -10,9 +10,9 @@
   "scripts": {
     "predeploy": "npm run start",
     "deploy": "gh-pages -d /",
-    "start": "webpack --mode=development",
-    "dev": "webpack-dev-server --progress --port 3000 --hot --inline",
-    "build": "webpack --mode=production"
+    "start": "webpack-dev-server --open --config webpack.dev.js --watch",
+    "dev": "webpack-dev-server --open --config webpack.dev.js --progress --port 3000 --hot --inline",
+    "build": "webpack --config webpack.prod.js"
   },
   "email": "anac.arribasplata@gmail.com",
   "devDependencies": {

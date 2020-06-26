@@ -6,13 +6,10 @@ import AboutComponent from "./layouts/about/AboutComponent";
 import TravelsComponent from "./layouts/travel/TravelsComponent";
 import FamilyComponent from "./layouts/family/FamilyComponent";
 import HireMe from "./layouts/hireMe/HireMe";
-
-
 import Links from "../app/components/navbar/navbar";
 
 
 class RouterComponent extends React.Component{
-
   constructor (props) {
     super(props);
     this.state = {
@@ -43,6 +40,5 @@ class RouterComponent extends React.Component{
       )
    }
 }
-
 
 export default RouterComponent;
