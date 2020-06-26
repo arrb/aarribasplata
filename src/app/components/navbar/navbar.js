@@ -23,7 +23,7 @@ class HomeComponent extends React.Component {
     }
 
     render() {
-        console.log("REnder: ". this.state)
+        console.log("REnder: ", this.state)
     return (
         <div id="outer-container">
             <Menu onStateChange={ this.isMenuOpen.bind(this) } isOpen={ false } width={ '50%' } id="scaleRotate" outerContainerId={'outer-container'} >
