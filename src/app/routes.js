@@ -24,7 +24,7 @@ class RouterComponent extends React.Component{
     this.setState({isOpen: !this.state.isOpen})
   }
 
-  ender(){
+  render(){
     console.log("routeesTEST: " , this.state.isOpen)
     return(
       <Router>
