@@ -9,16 +9,23 @@ import { faHome, faFemale } from '@fortawesome/free-solid-svg-icons'
 //@fortawesome/free-brands-svg-icons
 
 class HomeComponent extends React.Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+          isOpen: false
+          }
+      }
     isMenuOpen() {
-        console.log("is open: " , this.props)
+        const {isOpen} = this.state
+        console.log("is open: " , this.props, "stat", this.state, "isOpen ", isOpen)
         this.props.changeState();
+        this.setState({isOpen: !isOpen})
     }
 
     render() {
     return (
         <div id="outer-container">
-            <Menu onStateChange={ this.isMenuOpen.bind(this) } width={ '50%' } id="scaleRotate" outerContainerId={'outer-container'} >
+            <Menu onStateChange={ this.isMenuOpen.bind(this) } isOpen={this.state.isOpen} width={ '50%' } id="scaleRotate" outerContainerId={'outer-container'} >
                 <li className="li-menu-item"><a className="mernu-item" href="/#/about"> About Me </a></li>
                 <li className="li-menu-item"><a className="menu-item" href="/#/hireMe"> Hire Me  </a></li>
                 <li className="li-menu-item"><a className="menu-item" href="/#/travels"> Travels </a></li>
