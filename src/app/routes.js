@@ -25,21 +25,22 @@ class RouterComponent extends React.Component{
   }
 
   render(){
-    console.log("routest: " , this.state.isOpen)
+    console.log("routes: " , this.state.isOpen)
     return(
-      <Switch>
-          <Links changeState={this.changeState.bind(this)}/>
+      <Router>
+        <Links changeState={this.changeState.bind(this)}/>
           <Route exact path="/index" exact  render={(props) => <HomeComponent isOpen={this.state.isOpen} /> } />
           <Route path="/about" exact component={AboutComponent} />
           <Route path="/travels" exact component={TravelsComponent} /> 
           <Route path="/family" exact render={(props) => <FamilyComponent isOpen={this.state.isOpen} /> }  /> 
           <Route path="/hireMe" exact render={(props) => <HireMe isOpen={this.state.isOpen} /> }  /> 
           <Route render={(props) => <HomeComponent isOpen={this.state.isOpen} /> }/>
-        </Switch>
+        </Router>
       )
    }
 
 }
+
 
 
 export default RouterComponent;
