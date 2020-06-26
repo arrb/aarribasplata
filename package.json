@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "unpkg": "dist/index.js",
-  "homepage": "http://arrb.github.io/",
+  "homepage": "http://arrb.github.io/dist/",
   "engineStrict": true,
   "engines": {
     "node": ">=12.9.1"
