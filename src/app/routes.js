@@ -25,7 +25,7 @@ class RouterComponent extends React.Component{
   }
 
   render(){
-    console.log("routes: " , this.state.isOpen)
+    console.log("rouhheetes: " , this.state.isOpen)
     return(
       <Router>
         <Links changeState={this.changeState.bind(this)}/>
