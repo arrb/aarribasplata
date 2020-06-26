@@ -25,7 +25,7 @@ class RouterComponent extends React.Component{
   }
 
   ender(){
-    console.log("routesTEST: " , this.state.isOpen)
+    console.log("routeesTEST: " , this.state.isOpen)
     return(
       <Router>
         <Switch>
