@@ -113,7 +113,7 @@ module.exports = {
   output:{
         path: __dirname + "/dist",
         filename: "bundle.js",
-        publicPath: "https://arrb.github.io/"
+        publicPath: "https://arrb.github.io/dist/"
   },
   // cuando es local publicPath:" __dirname + "/build/"" funciona. Cuando es onlin `/` funciona
    plugins: [HTMLWebpackPluginConfig,MiniCssExtractPlugin],
