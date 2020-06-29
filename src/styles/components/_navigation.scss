@@ -149,20 +149,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
-/*
-@media screen and (max-width: 1000px) {
-  .bm-item {
-    font-size: 20px;
-  }
 
-  .small-icons{
-    font-size: 11px;
-  }
-
-}
-*/
 /* Small devices (landscape phones, 576px and up)b*/
-@media (min-width: 576px) { 
+@media (max-width: 576px) { 
   .bm-item {
     font-size: 20px;
   }
@@ -173,10 +162,19 @@ Note: Beware of modifying this element as it can break the animations - you shou
 }
  
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {  }
+@media (max-width: 768px) { 
+  .bm-item {
+    font-size: 20px;
+  }
+
+  .small-icons{
+    font-size: 11px;
+  }
+  
+}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {  }
+@media (max-width: 992px) {  }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
+@media (max-width: 1200px) {  }
