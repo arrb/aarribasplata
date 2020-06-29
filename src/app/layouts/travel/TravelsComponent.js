@@ -15,7 +15,6 @@ class TravelsComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      GOOGLE_MAP_API_KEY: 'AIzaSyBizrFcjeueuIq774fmA-vaertz5T97ZgQ',
       loading: true
     };
     this.createGoogleMap.bind(this);
