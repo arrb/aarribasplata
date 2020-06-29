@@ -93,10 +93,12 @@ class HireMe extends React.Component {
     });
     const str =
       "- Tell us about this project\n What skills are you looking for?";
+    const trianfleishShape = this.props.isOpen ? 'triangleish-shape change-size' : 'triangleish-shape';
+    const formShape = this.props.isOpen ? 'form-shape-container change-size-form' : 'form-shape-container';
 
     return(
       <div className="contact-wrapper" style={this.props.isOpen ?  {'filter': 'grayscale(100%)'} : null}>
-        <div className="triangleish-shape" style={this.props.isOpen ?  {'marginLeft': '-20%'} : null}>
+        <div className={trianfleishShape}>
           <div className="triangleish-content">
             <div className="triangle-content-div">
               <h1 className="title-tag">Hire Me!</h1>
@@ -106,13 +108,13 @@ class HireMe extends React.Component {
             </div>
           </div>
         </div>
-        <div className="form-shape-container" style={this.props.isOpen ?  {'marginLeft': '10%'} : null}>
+        <div className={formShape}>
           <div className="form-shape">
             <div className="form-content">
               <div>
                 <div style={!this.state.formSubmitted ?  {'display': 'none'} : {'display': 'block'}}><p>Thank you, this form has been submitted. I will get back at you shortly. </p></div>
                   <ThemeProvider theme={theme}>
-                  <div className={useStyles.margin} style={{width: '1200px'}}>
+                  <div className={useStyles.margin} id="form-hire-me">
                     <Grid container  spacing={2} alignItems="flex-end">
                       <Grid item>
                         <AccountCircle />

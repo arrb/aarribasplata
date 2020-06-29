@@ -13,7 +13,7 @@ class AboutComponent extends React.Component {
         };
         return (
             <div className="content">
-              <div style={divStyle}></div>
+              <div id="image-div" style={divStyle}></div>
               <div className="content-right">
                 <div className="description-tag">
                     <h1 className="title-tag-about">Hola!</h1>
