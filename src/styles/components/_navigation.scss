@@ -42,7 +42,7 @@ li.li-menu-item:visited {
 }
 
 .nav-down-li{
-  display: inline-block;
+  display: inline-flex;
 }
 
 .nav-down-li:not(:last-child)::after {

@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/core";
-import PacmanLoader from "react-spinners/PacmanLoader";
+import CircleLoader from "react-spinners/CircleLoader";
 
 var map;
 
@@ -19,16 +19,6 @@ class TravelsComponent extends React.Component {
       loading: true
     };
     this.createGoogleMap.bind(this);
-  }
-
-  componentWillMount() {
-    const script = document.createElement("script");
-
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBizrFcjeueuIq774fmA-vaertz5T97ZgQ&libraries=places";
-    script.async = true;
-    script.defer = true;
-
-    document.body.appendChild(script);
   }
 
   componentDidMount(){
@@ -102,7 +92,7 @@ class TravelsComponent extends React.Component {
     return (
       <div className="content">
         <div className="sweet-loading" style={ this.state.loading ? {display: "show"} : {display: "none"} } >
-          <PacmanLoader
+          <CircleLoader
           css={override}
           size={150}
           color={"#50E3C2"}
