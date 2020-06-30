@@ -36,8 +36,9 @@ class TravelsComponent extends React.Component {
     var mapOptions = {
       center : new google.maps.LatLng(0, 0),
       minZoom: 2.7,
-      zoomControl: false,
-      gestureHandling: 'none'
+      disableDefaultUI: true,
+      zoomControl: true,
+      gestureHandling: 'cooperative'
     };
 
     map = new google.maps.Map(document.getElementById('map'), mapOptions);

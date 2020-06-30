@@ -83,6 +83,10 @@ body > #root > div > .cComponent {
     line-height: 20px;
 }
 
+.breathing-paragraph{
+  margin-bottom: 5%;
+}
+
 /* Family */
 .slide-container {
   width: 100%;
@@ -147,7 +151,7 @@ h3 {
   width: 1200px;
 }
 
-.triangleish-shape .change-size{
+.triangleish-shape.change-size{
   margin-left: -20%;
 }
 
@@ -216,16 +220,75 @@ position: relative;
     transform: translateX(-50%) translateY(-50%) skew(20deg);
 }
 .triangle-content-div{
-  margin-left: 30%;
-  margin-top: 20%;
+  margin-left: 25%;
+  margin-top: 10%;
 }
 
 /* Small devices (landscape phones, 576px and up)b*/
 @media (max-width: 576px) { 
+  #myName{
+    font-size: 50px;
+  }
+
+  #image-div{
+    width: 15%!important;
+    background-size: contain!important;
+  } 
+
+  .content .content-right{
+    width: 80%;
+
+  }
+  .title-tag-about{
+    font-size: 20px;
+  }
+  .description-tag{
+    padding-top: 0%;
+    padding-right: 0%;
+  }
+  .breathing-paragraph{
+    font-size: 10px;
+  }
+
+  #title-abs{
+    font-size: 30px;
+    padding-top: 15%;
+  }
+
+  .title-tag{
+    font-size: 20px;
+  }
+
+  .triangleish-shape{
+    margin-left: -110%;
+    transform: skew(-50deg);
+  }
+
+  .triangle-content-div > p {
+    font-size: 10px;
+  }
+
+  .triangleish-content{
+    margin-top: 30%;
+    transform: translateX(-50%) translateY(-50%) skew(50deg)
+  }
+
+  #form-hire-me {
+    width: 200px;
+  }
+
+  .triangleish-shape.change-size{
+    margin-left: -120%;
+  }
+
+  #text-family-center{
+    width: 100%;
+    font-size: 10px;
+  }
 }
  
 /* Medium devices (tablets, 768px and up) */
-@media (max-width: 768px) { 
+@media (min-width: 577px) and (max-width: 768px) { 
   #myName{
     font-size: 90px;
   }
@@ -237,6 +300,14 @@ position: relative;
 
   .content .content-right{
     width: 90%;
+  }
+
+  .triangleish-shape.change-size{
+     margin-left: -120%;
+  }
+
+  #form-hire-me{
+    width: 600px;
   }
 
   .title-tag-about{
@@ -289,8 +360,54 @@ position: relative;
   }
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (max-width: 992px) {  }
+/* Extra large devices (large desktops, 1000px and up) */
+@media (min-width: 769px) and (max-width: 1024px) { 
+  #myName{
+    font-size: 100px;
+  }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (max-width: 1200px) {  }
+  #image-div{
+    margin-left: -10%;
+  } 
+
+  .content .content-right{
+    width: 60%;
+  }
+
+  .title-tag-about{
+    width: 30%; 
+    font-size: 35px;
+    padding:0;
+  }
+
+  .breathing-paragraph{
+    margin-bottom: 0%;
+    line-height: 1.3;
+  }
+
+  .triangleish-shape{
+    margin-left: -20%;
+    width: 70%;
+  }
+
+  #form-hire-me{
+    width: 600px;
+  }
+
+  .triangleish-shape.change-size{
+    margin-left: -40%;
+  }
+
+  .change-size-form{
+    margin-left: 20%;
+  }
+
+  .triangle-content-div{
+    margin-left: 35%;
+    margin-top: 15%;
+  }
+  .title-tag{
+    font-size: 50px;
+  }
+  
+}
