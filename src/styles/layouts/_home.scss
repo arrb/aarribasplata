@@ -260,8 +260,9 @@ position: relative;
   }
 
   .triangleish-shape{
-    margin-left: -110%;
+    margin-left: -120%;
     transform: skew(-50deg);
+    width: 100%
   }
 
   .triangle-content-div > p {
@@ -274,7 +275,7 @@ position: relative;
   }
 
   #form-hire-me {
-    width: 200px;
+    width: 300px;
   }
 
   .triangleish-shape.change-size{
