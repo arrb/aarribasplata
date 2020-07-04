@@ -105,7 +105,7 @@ class HireMe extends React.Component {
               <div className="hire-me-contact-div">
                 <p className="hire-me-p">
                   I enjoy working on Web Development, especially using ReactJS. For instance, I designed and wrote the code for this website purely using React and Webpack. 
-                  I enjoy using React because it was easy to learn and I like the magic behind the Virtual DOM. Also, I like seeing my code; I consider myself a tech artist.
+                  I enjoy using React because it was easy to learn and I like the magic behind the Virtual DOM. Also, I like seeing my code and I consider myself a tech artist.
                 </p>
                 <p className="hire-me-p"> 
                   At work, as a member of the back end team, I mostly write in Scala, JAVA, and SQL. The part about Back End that I enjoy the most is the mutual learning I 
@@ -121,7 +121,7 @@ class HireMe extends React.Component {
                   Overall, I am a person who likes to learn, always waiting to study the next best thing. 
                   I like working as a Full Stack developer with a focus on the Front End side of the project.
                 </p>
-                <p className="hire-me-p"> Let's chat more, send me an email. During the short wait, you can start looking at <a className="external-link" href="./../../../../arribasplata_ana_resume.pdf" target="_blank">my resume</a> </p>
+                <p className="hire-me-p"> Let's chat more, send me an email. You can start looking at <a className="external-link" href="./../../../../arribasplata_ana_resume.pdf" target="_blank">my resume</a> </p> while you wait shortly. 
               </div>
             </div>
           </div>

@@ -62,7 +62,7 @@ module.exports = {
             options: {
               path: __dirname + "/",
               name: '[name].[ext]',
-              publicPath: "http://localhost:3000/"
+              publicPath: "https://arrb.github.io/"
             }
           }
         ]
@@ -83,7 +83,7 @@ module.exports = {
   output:{
     path: __dirname + "/",
     filename: "bundle.js",
-    publicPath: "http://localhost:3000/"
+    publicPath: "https://arrb.github.io/"
   },
 
   plugins: [HTMLWebpackPluginConfig,MiniCssExtractPlugin, DefinePlugin],

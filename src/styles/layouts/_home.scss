@@ -243,12 +243,13 @@ position: relative;
   line-height: 1.5;
 }
 
-.hire-me-contact-div{
-  margin-top: -5%;
-}
 
 /* Small devices (landscape phones, 576px and up)b*/
 @media (max-width: 576px) { 
+  .bm-burger-button{
+    left: 6px;
+  }
+
   #myName{
     font-size: 50px;
   }
@@ -309,6 +310,48 @@ position: relative;
     width: 100%;
     font-size: 10px;
   }
+
+
+
+
+  .slide-container {
+    width: 100%;
+    height: 100vh;
+    display: inline-flex;
+    background-color: rgba(20, 245, 234, 0.22)
+  }
+
+
+  .slide-div{
+   width: 100%;
+  }
+
+  #text-family-center {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(205, 249, 247);
+    padding: 1px; 
+  }
+
+  .react-slideshow-container .nav{
+    height: 30px;
+  }
+
+
+  #text-family-center > h1 { 
+    margin-top: -15%;
+    font-size: 30px; 
+  }
+
+
+  #text-family-center > p { 
+    font-size: 15px; 
+    margin-top: -25%;
+    line-height: 1.3;
+    padding-top: 30px;
+  }
+
 }
  
 /* Medium devices (tablets, 768px and up) */
@@ -368,7 +411,17 @@ position: relative;
 
   .triangle-content-div{
     margin-left: 40%;
-    margin-top: 15%;
+    margin-top: 11%;
+    width: 100%;
+  }
+
+  .hire-me-p{
+    line-height: 1.3;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  .hire-me-contact-div{
+    padding-right: 5%;
   }
 
   .bm-item{
@@ -382,6 +435,50 @@ position: relative;
   .change-size-form{
     margin-left: 45%;
   }
+
+  .slide-container {
+    width: 100%;
+    height: 100vh;
+    display: inline-flex;
+    background-color: rgba(20, 245, 234, 0.22)
+  }
+
+
+  .slide-div{
+   width: 100%;
+  }
+
+  #text-family-center {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(205, 249, 247);
+    padding: 1px; 
+  }
+
+  .react-slideshow-container .nav{
+    height: 80px;
+  }
+
+
+  #text-family-center > h1 { 
+    color: #d54d7b; 
+    font-family: "Great Vibes", 
+    cursive; font-size: 40px; 
+    font-weight: normal; 
+    text-align: center; 
+    margin-top: -5%;
+  }
+
+
+  #text-family-center > p { 
+    color: #7a7c7f; 
+    font-size: 20px; 
+    font-family: "Libre Baskerville", serif; 
+    text-align: center; 
+    margin-top: -10%;
+  }
+
 }
 
 /* Extra large devices (large desktops, 1000px and up) */
@@ -433,5 +530,27 @@ position: relative;
   .title-tag{
     font-size: 50px;
   }
+
+  .hire-me-p {
+    line-height: 1.3;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 14px;
+  }
+
+  .hire-me-contact-div {
+    margin-top: -5%;
+  }
+
+  #text-family-center > h1 {
+    font-size: 100px;
+    line-height: 130px; 
+  }
+
+  #text-family-center > p {
+    margin-top: -5%;
+    padding-top: 0px; 
+    font-size: 23px; 
+  }
+
   
 }
