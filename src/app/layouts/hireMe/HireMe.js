@@ -102,9 +102,27 @@ class HireMe extends React.Component {
           <div className="triangleish-content">
             <div className="triangle-content-div">
               <h1 className="title-tag">Hire Me!</h1>
-              <p>I enjoy working on front end and back end.</p>
-              <p> I am also very interested in working with machine learning. Machine Learning was the topic for my thesis and Artifical Intelligence was what I focus on during my practicums</p>
-              <p> Let's chat more, send me an email </p>
+              <div className="hire-me-contact-div">
+                <p className="hire-me-p">
+                  I enjoy working on Web Development, especially using ReactJS. For instance, I designed and wrote the code for this website purely using React and Webpack. 
+                  I enjoy using React because it was easy to learn and I like the magic behind the Virtual DOM. Also, I like seeing my code; I consider myself a tech artist.
+                </p>
+                <p className="hire-me-p"> 
+                  At work, as a member of the back end team, I mostly write in Scala, JAVA, and SQL. The part about Back End that I enjoy the most is the mutual learning I 
+                  get from my peers via GitHub pull requests. Also, I like working on some performance challenges that front end work does not face. I love optimizing 
+                  performance and dealing with data.
+                </p>
+                <p className="hire-me-p">
+                  As part of my Master's program, I am now learning a lot about machine learning. As a consequence, I have started some personal projects that 
+                  are written in Python. My practicum is about how can we use Artificial Intelligence for Nation Building. In particular, using Artificial 
+                  Intelligence to raise the population at the bottom of the pyramid in India and the United States
+                </p>
+                <p className="hire-me-p">
+                  Overall, I am a person who likes to learn, always waiting to study the next best thing. 
+                  I like working as a Full Stack developer with a focus on the Front End side of the project.
+                </p>
+                <p className="hire-me-p"> Let's chat more, send me an email. During the short wait, you can start looking at <a className="external-link" href="./../../../../arribasplata_ana_resume.pdf" target="_blank">my resume</a> </p>
+              </div>
             </div>
           </div>
         </div>
@@ -121,7 +139,7 @@ class HireMe extends React.Component {
                       </Grid>
                       <Grid item xs={12} sm={6} >
                         <TextField 
-                          id="input-with-icon-grid" 
+                          id="input-with-icon-grid-name" 
                           label="Name" 
                           fullWidth
                           onChange={e => this.setState({name: event.target.value, formSubmitted: false})}
@@ -135,7 +153,7 @@ class HireMe extends React.Component {
                       </Grid>
                       <Grid item xs={12} sm={6}>
                         <TextField 
-                          id="input-with-icon-grid"
+                          id="input-with-icon-grid-email"
                           label="Email Address" 
                           fullWidth
                           onChange={e => this.setState({emailAddress: event.target.value, formSubmitted: false})}

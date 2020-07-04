@@ -23,7 +23,7 @@ class TravelsComponent extends React.Component {
   componentDidMount(){
     this.createGoogleMap();
     this.createMarker();
-    this.setState({loading: map})
+    this.setState({loading: map});
   }
 
   createGoogleMap() {
@@ -59,33 +59,108 @@ class TravelsComponent extends React.Component {
     var monacoCoordinates      = {lat: 43.740455,  lng: 7.425611  };
     var netherlandsCoordinates = {lat: 52.368097,  lng: 4.899590  };
     var baliCoordinates        = {lat: -8.378402,  lng: 115.134465};
+    var abuDhabiCoordinates    = {lat: 24.466667,  lng: 54.366669 };
     // mexico tijuana
     var setOfCountries = [
-      {position: limaCoordinates       , title: "Lima, Peru the country where I was born"            },
-      {position: bostonCoordinates     , title: "Boston Massachusetts, the place I now call home"    },
-      {position: miamiCoordinates      , title: "Miami Florida, the place I go when I'm missing home"},
-      {position: chicagoCoordinates    , title: "The other place I feel at home."                    },
-      {position: newYorkCoordinates    , title: "The place I go when I am looking for good food"     },
-      {position: franceCoordinates     , title: "The place where I want to retire"                   },
-      {position: irelandCoordinates    , title: "First time I was in Europe"                         },
-      {position: dubaiCoordinates      , title: "The best beach I have ever seen"                    },
-      {position: colombiaCoordinates   , title: "Place with people with good hearts"                 },
-      {position: puertoRicoCoordinates , title: "Place where I go to escape from Boston"             },
-      {position: monacoCoordinates     , title: "Place I wish to come back soon"                     },
-      {position: netherlandsCoordinates, title: "Place where my dad went to get his MBA."            },
-      {position: baliCoordinates       , title: "Amazing place to clean your soul"                   }
+      {
+        position: limaCoordinates, 
+        name    : "Lima, Peru", 
+        content : "The country where I was born. Peru is the place where I learned how to be compassionate and help everyone succeed."
+      },
+      {
+        position: bostonCoordinates, 
+        name    : "Boston, Massachusetts", 
+        content : "I moved to Massachusetts when I was 16 and did not speak the language. This state has shaped me into the confident person I am today."
+      },
+      {
+        position: miamiCoordinates, 
+        name    : "Miami, Florida", 
+        content : "Miami is the place where I go to escape from the fast paced life of Massachusetts."
+      },
+      {
+        position: chicagoCoordinates, 
+        name    : "Chicago, Illinois", 
+        content : "Chicago is the only other state where I feel at home."
+      },
+      {
+        position: newYorkCoordinates, 
+        name    : "Brooklyn, New York", 
+        content : "Brooklyn has so much diversity, I am able to find any type of food from all over the world."
+      },
+      {
+        position: franceCoordinates, 
+        name    : "Paris, France", 
+        content : "Paris is the country where I feel I can be myself."
+      },
+      {
+        position: irelandCoordinates, 
+        name    : "Dublin, Ireland", 
+        content : "Ireland was the first European country I traveled to."
+      },
+      {
+        position: dubaiCoordinates, 
+        name    : "Dubai, United Arab Emirates", 
+        content : "Dubai has the most amazing beaches I have ever seen."
+      },
+      {
+        position: abuDhabiCoordinates, 
+        name    : "Abu Dhabi, United Arab Emirates", 
+        content : "Abu Dhabi open my mind towards different types of religion."
+      },
+      {
+        position: colombiaCoordinates, 
+        name    : "Bogota, Colombia", 
+        content : "Colombian people make anyone feel comfortable. They are trully the happiest people on earth."
+      },
+      {
+        position: puertoRicoCoordinates, 
+        name    : "San Juan, Puerto Rico", 
+        content : "San Juan is the closest little Peru from Massachusetts. People like to dance and have a good time with anyone."
+      },
+      {
+        position: monacoCoordinates, 
+        name    : "Monte Carlo, Monaco", 
+        content : "Monaco left me speachless with its rich culture and big casinos."
+      },
+      {
+        position: netherlandsCoordinates, 
+        name    : "Amsterdam, Netherlands", 
+        content : "It was amazing to go to Netherlands where my dad got his MBA."
+      },
+      {
+        position: baliCoordinates, 
+        name    : "Bali, Indonesia", 
+        content : "I went to Bali to clean my soul. I have never felt as peaceful as I did when I went to the Water Palace"
+      }
     ]
+    var marker ; 
 
     window.google 
       ? (
         setOfCountries.map( country => {
-        new window.google.maps.Marker({
-        position: country.position,
-        map: map,
-        title: country.title
-        })
+          var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">'+ country.name +'</h1>'+
+            '<div id="bodyContent">'+
+            '<p>' + country.content + '</p>'
+            '</div>'+
+            '</div>';
+          var infowindow = new window.google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 200
+          });
+          var marker = new window.google.maps.Marker({
+              position: country.position,
+              map: map
+          });
+          marker.addListener('click', function() {
+              infowindow.open(map, marker);
+          })
+          return 
       })
-    ) : console.log("boo")
+    ) : null
+
   }
 
   render() {

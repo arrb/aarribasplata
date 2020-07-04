@@ -9,16 +9,13 @@
 .menu-item:link {
   color: white;
 }
-.menu-item:focus {
-  color: #50E3C2;
+
+.bm-burger-button{
+  border: 1px solid #333;
+  box-shadow: 5px 5px #5450e3;
 }
 
 li.li-menu-item {
-  list-style-type: none;
-}
-
-li.li-menu-item:focus {
-  outline: none;
   list-style-type: none;
 }
 
@@ -26,6 +23,21 @@ li.li-menu-item:active {
   border: 5px solid #50E3C2;
   outline: none;
   list-style-type: none;
+}
+
+.menu-item:hover{
+  color: #50E3C2;
+  outline: none;
+  list-style-type: none;
+  border: 1px solid transparent;
+}
+
+
+li.li-menu-item:focus{
+    color: #50E3C2;
+  outline: none;
+  list-style-type: none;
+  border: 1px solid transparent;
 }
 
 li.li-menu-item:visited {
@@ -66,6 +78,18 @@ li.li-menu-item:visited {
 }
 .small-icons:visited {
   color: white;
+}
+.small-icons:hover {
+  color: white;
+  outline: none;
+  list-style-type: none;
+  border: 1px solid transparent;
+}
+
+.nav-down-li:hover{
+  outline: none;
+  list-style-type: none;
+  border: 1px solid transparent;
 }
 
 .small-icons > svg {

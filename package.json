@@ -69,7 +69,6 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-slideshow-image": "^1.5.3",
-    "react-slidez": "0.0.31",
     "react-spinners": "^0.8.3"
   },
   "eslintConfig": {
