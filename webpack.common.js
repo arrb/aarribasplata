@@ -4,8 +4,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const { join, resolve } = require('path')
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const dotenv = require('dotenv')
-const isDevelopment = true
-
+// FIXME change this bit
+const isDevelopment = false
 
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: join(__dirname, 'src', 'index.html'),
@@ -14,21 +14,23 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   favicon : join(__dirname, 'images', 'favicon1.ico')
 });
 
-
 var MiniCssExtractPlugin =  new MiniCssExtractPlugin({
-      filename: isDevelopment ? path.join(__dirname, '[name].css') : path.join(__dirname, '[name].[hash].css'),
-      chunkFilename: isDevelopment ? path.join(__dirname, '[id].css') : path.join(__dirname, '[id].[hash].css')
+      filename: path.join(__dirname, '[name].css') ,
+      chunkFilename: path.join(__dirname, '[id].css') 
     });
 
 var DefinePlugin = new webpack.DefinePlugin({
-       'process.env': JSON.stringify(dotenv.config().parsed) // it will automatically pick up key values from .env file
+       'process.env': JSON.stringify(dotenv.config().parsed) 
     });
+
+const path_to_react = isDevelopment  ? "http://localhost:3000/" : "https://arrb.github.io/";
 
 module.exports = {
   context: __dirname,
   entry  : "./src/index.js",
   devtool: 'source-map',
   mode   : 'development',
+  target: 'node',
   module : {
     rules: [{
        test: /\.m?js$/,
@@ -41,18 +43,27 @@ module.exports = {
       }
     },
     {
-      test: /\.s(a|c)ss$/,
-      exclude: /\.module.(s(a|c)ss)$/,
-      loader: [
-        isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
-        'css-loader',
-        {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: isDevelopment
+     test: /\.scss$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].css"
+            }
+          },
+          {
+            loader: "extract-loader"
+          },
+          {
+            loader: "css-loader?-url"
+          },
+          {
+            loader: "postcss-loader"
+          },
+          {
+            loader: "sass-loader"
           }
-        }
-      ]
+        ]
     },          
     {
       test: /\.(svg|png|jpg)$/,
@@ -62,7 +73,7 @@ module.exports = {
             options: {
               path: __dirname + "/",
               name: '[name].[ext]',
-              publicPath: "https://arrb.github.io/"
+              publicPath: path_to_react
             }
           }
         ]
@@ -83,7 +94,7 @@ module.exports = {
   output:{
     path: __dirname + "/",
     filename: "bundle.js",
-    publicPath: "https://arrb.github.io/"
+    publicPath: path_to_react
   },
 
   plugins: [HTMLWebpackPluginConfig,MiniCssExtractPlugin, DefinePlugin],
