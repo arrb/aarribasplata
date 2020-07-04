@@ -134,10 +134,12 @@ class TravelsComponent extends React.Component {
       }
     ]
     var marker ; 
+    var infowindow = new window.google.maps.InfoWindow({ maxWidth: 300 });
 
     window.google 
       ? (
         setOfCountries.map( country => {
+          var oldInfoWindow;
           var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
@@ -146,15 +148,13 @@ class TravelsComponent extends React.Component {
             '<p>' + country.content + '</p>'
             '</div>'+
             '</div>';
-          var infowindow = new window.google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 200
-          });
+         
           var marker = new window.google.maps.Marker({
               position: country.position,
               map: map
           });
           marker.addListener('click', function() {
+              infowindow.setContent(contentString);
               infowindow.open(map, marker);
           })
           return 
