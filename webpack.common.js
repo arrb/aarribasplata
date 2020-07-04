@@ -15,15 +15,13 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 var MiniCssExtractPlugin =  new MiniCssExtractPlugin({
-      filename: path.join(__dirname, '[name].css') ,
-      chunkFilename: path.join(__dirname, '[id].css') 
-    });
+    filename: path.join(__dirname, '[name].css') ,
+    chunkFilename: path.join(__dirname, '[id].css') 
+  });
 
 var DefinePlugin = new webpack.DefinePlugin({
        'process.env': JSON.stringify(dotenv.config().parsed) 
     });
-
-const path_to_react = isDevelopment  ? "http://localhost:3000/" : "https://arrb.github.io/";
 
 module.exports = {
   context: __dirname,
@@ -73,7 +71,7 @@ module.exports = {
             options: {
               path: __dirname + "/",
               name: '[name].[ext]',
-              publicPath: path_to_react
+              publicPath: "https://arrb.github.io/"
             }
           }
         ]
@@ -94,7 +92,7 @@ module.exports = {
   output:{
     path: __dirname + "/",
     filename: "bundle.js",
-    publicPath: path_to_react
+    publicPath: "https://arrb.github.io/"
   },
 
   plugins: [HTMLWebpackPluginConfig,MiniCssExtractPlugin, DefinePlugin],
