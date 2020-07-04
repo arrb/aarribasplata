@@ -121,7 +121,7 @@ class HireMe extends React.Component {
                   Overall, I am a person who likes to learn, always waiting to study the next best thing. 
                   I like working as a Full Stack developer with a focus on the Front End side of the project.
                 </p>
-                <p className="hire-me-p"> Let's chat more, send me an email. You can start looking at <a className="external-link" href="./../../../../arribasplata_ana_resume.pdf" target="_blank">my resume</a> </p> while you wait shortly. 
+                <p className="hire-me-p"> Let's chat more, send me an email. You can start looking at <a className="external-link" href="./../../../../arribasplata_ana_resume.pdf" target="_blank">my resume</a>  while you wait shortly. </p>
               </div>
             </div>
           </div>
