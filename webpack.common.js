@@ -4,8 +4,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const { join, resolve } = require('path')
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const dotenv = require('dotenv')
-// FIXME change this bit
-const isDevelopment = false
+const isDevelopment = true
+
 
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: join(__dirname, 'src', 'index.html'),
@@ -14,13 +14,14 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   favicon : join(__dirname, 'images', 'favicon1.ico')
 });
 
+
 var MiniCssExtractPlugin =  new MiniCssExtractPlugin({
-    filename: path.join(__dirname, '[name].css') ,
-    chunkFilename: path.join(__dirname, '[id].css') 
-  });
+      filename: isDevelopment ? path.join(__dirname, '[name].css') : path.join(__dirname, '[name].[hash].css'),
+      chunkFilename: isDevelopment ? path.join(__dirname, '[id].css') : path.join(__dirname, '[id].[hash].css')
+    });
 
 var DefinePlugin = new webpack.DefinePlugin({
-       'process.env': JSON.stringify(dotenv.config().parsed) 
+       'process.env': JSON.stringify(dotenv.config().parsed) // it will automatically pick up key values from .env file
     });
 
 module.exports = {
@@ -28,7 +29,6 @@ module.exports = {
   entry  : "./src/index.js",
   devtool: 'source-map',
   mode   : 'development',
-  target: 'node',
   module : {
     rules: [{
        test: /\.m?js$/,
@@ -41,27 +41,18 @@ module.exports = {
       }
     },
     {
-     test: /\.scss$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].css"
-            }
-          },
-          {
-            loader: "extract-loader"
-          },
-          {
-            loader: "css-loader?-url"
-          },
-          {
-            loader: "postcss-loader"
-          },
-          {
-            loader: "sass-loader"
+      test: /\.s(a|c)ss$/,
+      exclude: /\.module.(s(a|c)ss)$/,
+      loader: [
+        isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+        'css-loader',
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: isDevelopment
           }
-        ]
+        }
+      ]
     },          
     {
       test: /\.(svg|png|jpg)$/,
