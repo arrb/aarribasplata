@@ -4,6 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const { join, resolve } = require('path')
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const dotenv = require('dotenv')
+// Fix me change this.
 const isDevelopment = true
 
 
@@ -16,19 +17,20 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 
 
 var MiniCssExtractPlugin =  new MiniCssExtractPlugin({
-      filename: isDevelopment ? path.join(__dirname, '[name].css') : path.join(__dirname, '[name].[hash].css'),
-      chunkFilename: isDevelopment ? path.join(__dirname, '[id].css') : path.join(__dirname, '[id].[hash].css')
-    });
+  filename: isDevelopment ? path.join(__dirname, '[name].css') : path.join(__dirname, '[name].[hash].css'),
+  chunkFilename: isDevelopment ? path.join(__dirname, '[id].css') : path.join(__dirname, '[id].[hash].css')
+});
 
 var DefinePlugin = new webpack.DefinePlugin({
-       'process.env': JSON.stringify(dotenv.config().parsed) // it will automatically pick up key values from .env file
-    });
+  'process.env': JSON.stringify(dotenv.config().parsed) 
+});
 
 module.exports = {
   context: __dirname,
   entry  : "./src/index.js",
   devtool: 'source-map',
   mode   : 'development',
+  target: 'node',
   module : {
     rules: [{
        test: /\.m?js$/,
